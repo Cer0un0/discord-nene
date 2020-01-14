@@ -1,5 +1,6 @@
 # インストールした discord.py を読み込む
 import discord
+import sys
 
 # 自分のBotのアクセストークンに置き換えてください
 TOKEN = 'NjY2NTg2ODY1OTMwODYyNjA0.Xh2YJw.oHLHp9MjLvwu1f1et3kVP6chd-w'
@@ -14,8 +15,13 @@ async def on_ready():
     print('ログインしました')
 
 # メッセージ受信時に動作する処理
+
+
 @client.event
 async def on_message(message):
+    if message.content.startswith('!nene'):
+        await client.logout()
+        await sys.exit()
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
