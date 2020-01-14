@@ -27,4 +27,5 @@ async def on_message(message):
 client.run(TOKEN)
 
 
-print('test')
+print('test2')
+
