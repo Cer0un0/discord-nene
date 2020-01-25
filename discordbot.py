@@ -19,7 +19,7 @@ async def on_ready():
     print('ログインしました')
 
     channel = client.get_channel(int(os.environ["CHANNEL_DEVROOM"]))
-    await channel.send("アップデートを反映しました")
+    await channel.send("墨です!!!おはようございます!!!!!")
 # メッセージ受信時に動作する処理
 
 
