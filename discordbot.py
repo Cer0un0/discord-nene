@@ -119,4 +119,6 @@ async def on_message(message):
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
 
+channel = self.get_channel(int(os.environ["CHANNEL_DEVROOM"]))
+await channel.send("アップデートを反映しました")
 
