@@ -8,7 +8,6 @@ import os
 # 自分のBotのアクセストークンに置き換えてください
 TOKEN = os.environ["TOKEN"]
 
-
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 #unko
@@ -96,6 +95,11 @@ async def on_message(message):
             return_message = 'もう、カノジョをこんなにほうっておくなんて。\nオシオキが必要なんじゃない？'
         elif x == 1:
             return_message = '今まで何してたの？・・・もう。'
+
+        await message.channel.send(return_message)
+
+    elif message.content == '/sumi':
+        return_message = 'https://alu-web-herokuapp-com.global.ssl.fastly.net/cropped_images/jc6P0JsnKYOAtiVWIPpRWu0Zvyq2/c_1575278753301'
 
         await message.channel.send(return_message)
 
