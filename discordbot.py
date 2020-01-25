@@ -8,6 +8,7 @@ import os
 # 自分のBotのアクセストークンに置き換えてください
 TOKEN = os.environ["TOKEN"]
 
+
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 #unko
