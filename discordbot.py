@@ -6,9 +6,8 @@ import random as ra
 import os
 
 # 自分のBotのアクセストークンに置き換えてください
-#TOKEN = 'NjY2NTg2ODY1OTMwODYyNjA0.Xh2YJw.oHLHp9MjLvwu1f1et3kVP6chd-w'
-TOKEN = os.environ["TOKEN"]
-
+TOKEN = 'NjY2NTg2ODY1OTMwODYyNjA0.XixdJw.mdIETNqVpiOMB6Y0UpyC70mVNzY'
+#TOKEN = os.environ["TOKEN"]
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
