@@ -99,7 +99,13 @@ async def on_message(message):
         await message.channel.send(return_message)
 
     elif message.content == '/sumi':
-        return_message = 'https://alu-web-herokuapp-com.global.ssl.fastly.net/cropped_images/jc6P0JsnKYOAtiVWIPpRWu0Zvyq2/c_1575278753301'
+        x = ra.randint(0, 1)
+        return_message = ''
+        if x == 0:
+            return_message = 'https://alu-web-herokuapp-com.global.ssl.fastly.net/cropped_images/jc6P0JsnKYOAtiVWIPpRWu0Zvyq2/c_1575278753301'
+        elif x == 1:
+
+            return_message = 'https://nekomata-blg.com/wp-content/uploads/2019/06/kanojo-okarishimasu-94th-impressions-01.jpg'
 
         await message.channel.send(return_message)
 
