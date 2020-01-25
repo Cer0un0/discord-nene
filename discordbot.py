@@ -11,6 +11,7 @@ TOKEN = 'NjY2NTg2ODY1OTMwODYyNjA0.XixdJw.mdIETNqVpiOMB6Y0UpyC70mVNzY'
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
+#unko
 
 # 起動時に動作する処理
 @client.event
