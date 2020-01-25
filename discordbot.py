@@ -88,12 +88,13 @@ async def on_message(message):
         await message.channel.send('にゃーん')
     elif message.content == '/oshioki':
         x = ra.randint(0, 1)
+        return_message = ''
         if x == 0:
-            message = 'もう、カノジョをこんなにほうっておくなんて。\nオシオキが必要なんじゃない？'
+            return_message = 'もう、カノジョをこんなにほうっておくなんて。\nオシオキが必要なんじゃない？'
         elif x == 1:
-            message = '今まで何してたの？・・・もう。'
+            return_message = '今まで何してたの？・・・もう。'
 
-            await message.channel.send(message)
+        await message.channel.send(return_message)
 
     elif '/tenki' in message.content:
         if ' ' not in message.content: await message.channel.send('Osaka(O), Hakata(H), Machida(M), Kawasaki(K)から選んでね')
