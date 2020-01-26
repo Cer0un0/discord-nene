@@ -104,7 +104,7 @@ async def on_message(message):
         line = f.readlines()
         url = []
         for i in range(len(line)):
-            url.append(line.replace('\n', ''))
+            url.append(line[i].replace('\n', ''))
         x = ra.randint(0, len(url))
         return_message = url[x]
 
