@@ -105,7 +105,7 @@ async def on_message(message):
         url = []
         for i in range(len(line)):
             url.append(line[i].replace('\n', ''))
-        x = ra.randint(0, len(url))
+        x = ra.randint(0, len(url)-1)
         return_message = url[x]
 
         await message.channel.send(return_message)
