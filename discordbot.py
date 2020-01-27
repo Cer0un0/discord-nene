@@ -109,6 +109,16 @@ async def on_message(message):
         return_message = url[x]
 
         await message.channel.send(return_message)
+    elif message.content == '/ruka':
+        f = open('ruka', 'r')
+        line = f.readlines()
+        url = []
+        for i in range(len(line)):
+            url.append(line[i].replace('\n', ''))
+        x = ra.randint(0, len(url)-1)
+        return_message = url[x]
+
+        await message.channel.send(return_message)
 
     elif '/tenki' in message.content:
         if ' ' not in message.content: await message.channel.send('Osaka(O), Hakata(H), Machida(M), Kawasaki(K)から選んでね')
