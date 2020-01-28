@@ -79,7 +79,7 @@ def ra_file_line(input_file):
     line = f.readlines()
     url = []
     for i in range(len(line)):
-        url.append(line[i].replace('\n', ''))
+        url.append(line[i][:-1])
     x = ra.randint(0, len(url)-1)
 
     return url[x]
