@@ -74,7 +74,15 @@ def extract_rainfall(json_data):
 
     return in_one_hour_rainfall
 
+def ra_file_line(input_file):
+    f = open(input_file, 'r')
+    line = f.readlines()
+    url = []
+    for i in range(len(line)):
+        url.append(line[i].replace('\n', ''))
+    x = ra.randint(0, len(url)-1)
 
+    return url[x]
 
 
 @client.event
@@ -92,36 +100,11 @@ async def on_message(message):
     if message.content == '/neko':
         await message.channel.send('にゃーん')
     elif message.content == '/oshioki':
-        x = ra.randint(0, 1)
-        return_message = ''
-        if x == 0:
-            return_message = 'もう、カノジョをこんなにほうっておくなんて。\nオシオキが必要なんじゃない？'
-        elif x == 1:
-            return_message = '今まで何してたの？・・・もう。'
-
-        await message.channel.send(return_message)
-
+        await message.channel.send(ra_file_line('oshioki'))
     elif message.content == '/sumi':
-        f = open('sumi', 'r')
-        line = f.readlines()
-        url = []
-        for i in range(len(line)):
-            url.append(line[i].replace('\n', ''))
-        x = ra.randint(0, len(url)-1)
-        return_message = url[x]
-
-        await message.channel.send(return_message)
+        await message.channel.send(ra_file_line('sumi'))
     elif message.content == '/ruka':
-        f = open('ruka', 'r')
-        line = f.readlines()
-        url = []
-        for i in range(len(line)):
-            url.append(line[i].replace('\n', ''))
-        x = ra.randint(0, len(url)-1)
-        return_message = url[x]
-
-        await message.channel.send(return_message)
-
+        await message.channel.send(ra_file_line('ruka'))
     elif '/tenki' in message.content:
         if ' ' not in message.content: await message.channel.send('Osaka(O), Hakata(H), Machida(M), Kawasaki(K)から選んでね')
         else:
