@@ -4,9 +4,11 @@ import sys
 import requests
 import random as ra
 import os
+sys.dont_write_bytecode = True
 
 # 自分のBotのアクセストークンに置き換えてください
 TOKEN = os.environ["TOKEN"]
+
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
@@ -17,6 +19,7 @@ client = discord.Client()
 async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
+
 
     channel = client.get_channel(int(os.environ["CHANNEL_DEVROOM"]))
     await channel.send("墨です!!!おはようございます!!!!!")
@@ -84,6 +87,18 @@ def ra_file_line(input_file):
 
     return url[x]
 
+def save_py(message):
+
+    out = open('out.py', 'w')
+    lines = message.split('\n')
+    print(lines)
+    out.write('def do():\n')
+
+    for line in lines[1:]:
+        out.write(' '+line+'\n')
+    out.close()
+    return
+
 
 @client.event
 async def on_message(message):
@@ -111,6 +126,23 @@ async def on_message(message):
             S = message.content[1:].split(' ')
             await message.channel.send(weather(S))
         print('ochinpo')
+
+    elif '/python' in message.content:
+        await message.channel.send(message.author.id)
+        await message.channel.send(type(message.author.id))
+        if message.author.id == 666586865930862604:
+            pass
+        else:
+            save_py(message.content)
+            import out
+#            print(out.do())
+            a = out.do()
+#            print('a', str(a))
+            await message.channel.send('Return:' + str(a))
+            del a
+
+
+#            await message.channel.send(py(message))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
