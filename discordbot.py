@@ -116,9 +116,9 @@ async def on_message(message):
         await message.channel.send('にゃーん')
     elif message.content == '/oshioki':
         await message.channel.send(ra_file_line('oshioki'))
-    elif message.content in '/sumi':
+    elif '/sumi' in message.content:
         await message.channel.send(ra_file_line('sumi'))
-    elif message.content in '/ruka':
+    elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
     elif '/tenki' in message.content:
         if ' ' not in message.content: await message.channel.send('Osaka(O), Hakata(H), Machida(M), Kawasaki(K)から選んでね')
