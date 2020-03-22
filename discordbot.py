@@ -100,15 +100,34 @@ def save_py(message):
     return
 
 
-def dekke(message, split_s):
+def dekke(message, split_s): # 返すだけ
     N = 5
     x = ra.randint(0, N)
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
+    return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
+
+
+def sugge(message, split_s):
+    N = 10
+    x = ra.randint(0, N)
+    s = message.split(split_s)
+    kke_num = ra.randint(1, 20)
+    ex_num = ra.randint(1, 20)
     x = 1
-    if x==1:
+    if x<5:
         return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
+    elif x==6:
+        return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'くない・・・'
+    elif x==7:
+        return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ーわけないだろ' + '！'*ex_num
+    elif x==8:
+        return '/rfgacha りん・・・来い' + '！'*ex_num
+    elif x==9:
+        return 'さとりのちんぽのが' + s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ーよ'*kke_num + '！'*ex_num
+
+
 
 
 
@@ -130,6 +149,10 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
+    elif 'すげー' in message.content or message.content or 'でけー' in message.content :
+        await message.channel.send(sugge(message.content, 'けー'))
+    elif 'すっげー' in message.content or 'でっけー' in message.content::
+        await message.channel.send(sugge(message.content, 'っけー'))
     elif 'っけー' in message.content:
         await message.channel.send(dekke(message.content, 'っけー'))
     elif 'げー' in message.content:
