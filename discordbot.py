@@ -120,7 +120,7 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
-    elif 'っけー' in message.content:
+    elif 'っけー' in message.content and message.content.bot==False:
         await message.channel.send('でっけーよ・・・')
 
 # Botの起動とDiscordサーバーへの接続
