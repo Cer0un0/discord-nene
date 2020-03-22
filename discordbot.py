@@ -89,9 +89,6 @@ def sugge(message, split_s):
 @client.event
 async def on_message(message):
     print(message.content)
-    if message.content.startswith('!nene'):
-        await client.logout()
-        await sys.exit()
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
