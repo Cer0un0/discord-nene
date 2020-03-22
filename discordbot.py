@@ -113,7 +113,7 @@ def dekke(message, split_s): # 返すだけ
     elif x==9:
         return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
 
-    return '/festival'
+    return '/washlet'
 
 
 def sugge(message, split_s):
@@ -133,7 +133,7 @@ def sugge(message, split_s):
     elif x==9:
         return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
 
-    return '/oshioki'
+    return '/washlet'
 
 
 
