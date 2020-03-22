@@ -106,11 +106,9 @@ async def on_message(message):
     if message.content.startswith('!nene'):
         await client.logout()
         await sys.exit()
-    '''
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    '''
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
@@ -120,7 +118,7 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
-    elif 'っけー' in message.content and message.auther.bot==False:
+    elif 'っけー' in message.content:
         await message.channel.send('でっけーよ・・・')
 
 # Botの起動とDiscordサーバーへの接続
