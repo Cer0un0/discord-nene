@@ -106,7 +106,7 @@ def dekke(message, split_s): # 返すだけ
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
-    return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
+    return s[0][len(s[0])-2] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
 
 
 def sugge(message, split_s):
