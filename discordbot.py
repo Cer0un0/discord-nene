@@ -129,7 +129,7 @@ async def on_message(message):
         print('ochinpo')
     '''
 
-    elif 'っけー' in message.content:
+    elif u'っけー' in message.content:
         await message.channel.send('でっけーよ・・・')
 
 # Botの起動とDiscordサーバーへの接続
