@@ -13,7 +13,6 @@ TOKEN = botutil.get_environvar('TOKEN')
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
-#unko
 
 # 起動時に動作する処理
 @client.event
