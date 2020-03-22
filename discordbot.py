@@ -6,8 +6,10 @@ import random as ra
 import os
 sys.dont_write_bytecode = True
 
+import botutil
+
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = os.environ["TOKEN"]
+TOKEN = botutil.get_environvar('TOKEN')
 
 
 # 接続に必要なオブジェクトを生成
@@ -21,7 +23,7 @@ async def on_ready():
     print('ログインしました')
 
 
-    channel = client.get_channel(int(os.environ["CHANNEL_DEVROOM"]))
+    channel = client.get_channel(int(botutil.get_environvar('CHANNEL_DEVROOM')))
     await channel.send("墨です!!!おはようございます!!!!!")
 # メッセージ受信時に動作する処理
 
