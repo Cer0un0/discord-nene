@@ -100,15 +100,15 @@ def save_py(message):
     return
 
 
-def dekke(message):
+def dekke(message, split_s):
     N = 5
-    split_s = 'っけー'
     x = ra.randint(0, N)
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
+    ex_num = ra.randint(1, 20)
     x = 1
     if x==1:
-        return s[0][len(s[0])-1] + 'っけ' + 'ー'*kke_num
+        return s[0][len(s[0])-1] + split_s[0:len(split_s)-2] + 'ー'*kke_num + '！'*ex_num
 
 
 
@@ -131,7 +131,9 @@ async def on_message(message):
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
     elif 'っけー' in message.content:
-        await message.channel.send(dekke(message.content))
+        await message.channel.send(dekke(message.content, 'っけー'))
+    elif 'げー' in message.content:
+        await message.channel.send(dekke(message.content, 'げー'))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
