@@ -124,7 +124,9 @@ def sugge(message, split_s):
     elif x==8:
         return '/rfgacha りん・・・来い' + '！'*ex_num
     elif x==9:
-        return 'さとりのちんぽのが' + s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ーよ'*kke_num + '！'*ex_num
+        return 'さとりのちんぽのが' + s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'よ'*kke_num + '！'*ex_num
+
+    return '/unko'
 
 
 
