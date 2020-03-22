@@ -101,12 +101,19 @@ def save_py(message):
 
 
 def dekke(message, split_s): # 返すだけ
-    N = 5
+    N = 10
     x = ra.randint(0, N)
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
-    return s[0][len(s[0])-2] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
+    if x<5:
+        return 'すっげー' +  'ー'*kke_num + '！'*ex_num
+    elif x<8:
+        return 'すげーじゃねーか'
+    elif x==9:
+        return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
+
+    return '/oshioki'
 
 
 def sugge(message, split_s):
@@ -116,17 +123,17 @@ def sugge(message, split_s):
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
     if x<5:
-        return s[0][len(s[0])-2] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
+        return 'でっけ' + 'ー'*kke_num + '！'*ex_num
     elif x==6:
-        return s[0][len(s[0])-2] + split_s[0:len(split_s)-1] + 'くない・・・'
+        return 'でっかくない・・・'
     elif x==7:
-        return s[0][len(s[0])-2] + split_s[0:len(split_s)-1] + 'ーわけないだろ' + '！'*ex_num
+        return 'でっけーわけないだろ' + '！'*ex_num
     elif x==8:
         return '/rfgacha りん・・・来い' + '！'*ex_num
     elif x==9:
-        return 'さとりのちんぽのが' + s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ーよ' + '！'*ex_num
+        return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
 
-    return '/unko'
+    return '/oshioki'
 
 
 
@@ -150,18 +157,11 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
-    elif 'すげー' in message.content:
+    elif 'すっげー' in message.content:
         await message.channel.send(sugge(message.content, 'けー'))
-    elif 'でけー' in message.content:
-        await message.channel.send(sugge(message.content, 'けー'))
-    elif 'っけー' in message.content:
-        await message.channel.send(dekke(message.content, 'っけー'))
-    elif 'っげー' in message.content:
-        await message.channel.send(dekke(message.content, 'っげー'))
-    '''
-    elif 'すっげー' in message.content or 'でっけー' in message.content:
-        await message.channel.send(sugge(message.content, 'っけー'))
-    '''
+    elif 'でっけー' in message.content:
+        await message.channel.send(dekke(message.content, 'けー'))
+
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
