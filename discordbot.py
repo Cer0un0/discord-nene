@@ -115,7 +115,6 @@ def sugge(message, split_s):
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
-    x = 1
     if x<5:
         return s[0][len(s[0])-1] + split_s[0:len(split_s)-1] + 'ー'*kke_num + '！'*ex_num
     elif x==6:
