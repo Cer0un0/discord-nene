@@ -127,22 +127,8 @@ async def on_message(message):
             await message.channel.send(weather(S))
         print('ochinpo')
 
-    elif '/python' in message.content:
-        await message.channel.send(message.author.id)
-        await message.channel.send(type(message.author.id))
-        if message.author.id == 666586865930862604:
-            pass
-        else:
-            save_py(message.content)
-            import out
-#            print(out.do())
-            a = out.do()
-#            print('a', str(a))
-            await message.channel.send('Return:' + str(a))
-            del a
-
-
-#            await message.channel.send(py(message))
+    elif 'っけー' in message.content:
+        print('うんこ')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
