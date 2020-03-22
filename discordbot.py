@@ -157,7 +157,7 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
-    elif 'すっげー' in message.content:
+    elif 'すげー' in message.content:
         await message.channel.send(sugge(message.content, 'けー'))
     elif 'でっけー' in message.content:
         await message.channel.send(dekke(message.content, 'けー'))
