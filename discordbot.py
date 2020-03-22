@@ -120,15 +120,17 @@ async def on_message(message):
         await message.channel.send(ra_file_line('sumi'))
     elif '/ruka' in message.content:
         await message.channel.send(ra_file_line('ruka'))
+    '''
     elif '/tenki' in message.content:
         if ' ' not in message.content: await message.channel.send('Osaka(O), Hakata(H), Machida(M), Kawasaki(K)から選んでね')
         else:
             S = message.content[1:].split(' ')
             await message.channel.send(weather(S))
         print('ochinpo')
+    '''
 
     elif 'っけー' in message.content:
-        print('うんこ')
+        await message.channel.send('でっけーよ・・・')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
