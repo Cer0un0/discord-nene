@@ -156,8 +156,8 @@ async def on_message(message):
         await message.channel.send(sugge(message.content, 'けー'))
     elif 'っけー' in message.content:
         await message.channel.send(dekke(message.content, 'っけー'))
-    elif 'げー' in message.content:
-        await message.channel.send(dekke(message.content, 'げー'))
+    elif 'っげー' in message.content:
+        await message.channel.send(dekke(message.content, 'っげー'))
     '''
     elif 'すっげー' in message.content or 'でっけー' in message.content:
         await message.channel.send(sugge(message.content, 'っけー'))
