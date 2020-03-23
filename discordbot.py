@@ -50,23 +50,23 @@ def save_py(message):
 
 
 def dekke(message, split_s): # 返すだけ
-    N = 10
+    N = 11
     x = ra.randint(0, N)
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
     ex_num = ra.randint(1, 20)
     if x<5:
         return 'すっげー' +  'ー'*kke_num + '！'*ex_num
-    elif x<8:
+    elif x<7:
         return 'すげーじゃねーか'
-    elif x==9:
+    elif x<9:
         return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
 
     return '/washlet'
 
 
 def sugge(message, split_s):
-    N = 10
+    N = 11
     x = ra.randint(0, N)
     s = message.split(split_s)
     kke_num = ra.randint(1, 20)
@@ -79,7 +79,7 @@ def sugge(message, split_s):
         return 'でっけーわけないだろ' + '！'*ex_num
     elif x==8:
         return '/rfgacha りん・・・来い' + '！'*ex_num
-    elif x==9:
+    elif x < 10:
         return 'さとりのちんぽのがでっけーよ' + '！'*ex_num
 
     return '/washlet'
