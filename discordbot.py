@@ -36,17 +36,6 @@ def ra_file_line(input_file):
 
     return url[x]
 
-def save_py(message):
-
-    out = open('out.py', 'w')
-    lines = message.split('\n')
-    print(lines)
-    out.write('def do():\n')
-
-    for line in lines[1:]:
-        out.write(' '+line+'\n')
-    out.close()
-    return
 
 
 def dekke(message, split_s): # 返すだけ
